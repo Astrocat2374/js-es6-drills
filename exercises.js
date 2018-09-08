@@ -6,7 +6,10 @@
  * @return {Number}
  * 
  */
-var stringCount;
+var stringCount = string => {
+  console.log('string', string);
+  return string.length;
+};
 
 /* #arrayLength
  *
@@ -15,7 +18,10 @@ var stringCount;
  * @param {Array}
  * @return {Number}
  */
-var arrayLength;
+var arrayLength = array => {
+  console.log('array', array);
+  return array.length;
+};
 
 /* #countAll
  *
@@ -24,7 +30,12 @@ var arrayLength;
  * @param {Array}
  * @return {Number}
  */
-var countAll;
+var countAll = array => {
+  console.log('array', array);
+  return array.reduce(function(accum, curr){
+    return accum + curr;
+  }, 0)
+}
 
 /* #countStrings
  *
@@ -33,7 +44,12 @@ var countAll;
  * @param {Array}
  * @return {Array}
  */
-var countStrings;
+var countStrings = array => {
+  console.log('array', array);
+  return array.map(function(string){
+    return string.length;
+  })
+};
 
 /* #countAllStrings
  *
@@ -125,10 +141,10 @@ var doubleArray;
  */
 
 module.exports = {
-  stringCount: null,
-  arrayLength: null,
-  countAll: null,
-  countStrings: null,
+  stringCount: stringCount,
+  arrayLength: arrayLength,
+  countAll: countAll,
+  countStrings: countStrings,
   countAllStrings: null,
   splitString: null,
   lengthOfLast: null,
