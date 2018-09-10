@@ -58,7 +58,12 @@ var countStrings = array => {
  * @param {String}
  * @return {Number}
  */
-var countAllStrings;
+var countAllStrings = string => {
+  console.log('string', string);
+  return string.reduce(function(accum, current){
+    return accum + current.length;
+  }, 0)
+};
 
 /* #splitString
  *
@@ -67,7 +72,10 @@ var countAllStrings;
  * @param {String}
  * @return {Array}
  */
-var splitString;
+var splitString = string => {
+  console.log('string', string);
+  return string.split(string);
+};
 
 /* #lengthOfLast
  *
@@ -145,8 +153,8 @@ module.exports = {
   arrayLength: arrayLength,
   countAll: countAll,
   countStrings: countStrings,
-  countAllStrings: null,
-  splitString: null,
+  countAllStrings: countAllStrings,
+  splitString: splitString,
   lengthOfLast: null,
   sumBelowTen: null,
   moreThanTenLetters: null,
